@@ -21,7 +21,13 @@ $bic4Colours = new bic4Colours();
 <body>
 <h1>Bic Pens</h1>
 <h2><?php echo $bicCristal->brandish() . ' Test'; ?></h2>
-<p><?php $bicCristal->uncap()->write('This is some really standard text.')->loadInk('green')->write('Lets spice it up just a touch!')->cap(); ?></p>
+<p><?php
+$bicCristal->uncap()
+            ->write('This is some really standard text.')
+            ->loadInk('green')
+            ->write('Lets spice it up just a touch!')
+            ->cap(); ?>
+</p>
 <h2><?php echo $bic4Colours->brandish() . ' Test'; ?></h2>
 <p><?php
 $bic4Colours->click(1)->write('This is a pretty boring color for this pen.')
