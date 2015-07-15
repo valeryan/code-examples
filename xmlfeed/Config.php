@@ -1,23 +1,27 @@
 <?php
+
+namespace xmlfeed;
+
 class Config
 {
-    static $conf_array;
-
+    public static $conf_array;
+    /**
+     * read a config item
+     * @param  string $name identifier for config item
+     * @return string
+     */
     public static function read($name)
     {
         return self::$conf_array[$name];
     }
-
+    /**
+     * store a config item
+     * @param  string $name  identifier for config item
+     * @param  string $value value to store
+     * @return void
+     */
     public static function write($name, $value)
     {
         self::$conf_array[$name] = $value;
     }
 }
-// db config
-Config::write('db.host', '123.123.123.123');
-Config::write('db.port', '3306');
-Config::write('db.basename', 'testdatabase');
-Config::write('db.user', 'testuser');
-Config::write('db.password', 'testuserpass');
-
-// end of file Config.php
